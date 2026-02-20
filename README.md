@@ -1,230 +1,173 @@
-# CREW Business Documents Package
+# C.R.E.W — Coordinated Robot Emergency Workforce
 
-This package contains everything you need to raise funding and launch CREW Technologies.
+> An open-source, software-only protocol that integrates diverse commercial robots into a unified emergency response network — no new hardware required.
 
-## 📄 Documents Included
-
-### 1. CREW_Pitch_Deck.md (9KB)
-**10-slide investor pitch deck** with speaker notes
-
-**Use for:**
-- Investor meetings (seed round)
-- Demo days
-- Conference presentations
-- Quick introductions
-
-**Contains:**
-- Problem statement
-- Solution overview
-- Market size ($5B TAM)
-- Business model
-- Competitive landscape
-- Traction & roadmap
-- The ask ($2M seed)
-- Exit potential
-
-**Format:** Markdown (easily convert to PowerPoint, Google Slides, or PDF)
+[![Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red?logo=youtube)](https://youtu.be/dEDPNMCkF6U?si=9Ms6WUkJV-i6i4Ep)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![ROS 2](https://img.shields.io/badge/ROS-2-brightgreen)](https://docs.ros.org/)
 
 ---
 
-### 2. CREW_Business_Plan.md (61KB)
-**Comprehensive 13-section business plan**
+## What is CREW?
 
-**Use for:**
-- Due diligence (investors, partners)
-- SBIR/STTR grant applications
-- Strategic planning
-- Team alignment
-- Board presentations
+CREW is an open-source protocol built on ROS 2 that allows human coordinators to discover nearby robots, assess their specific capabilities, and assign critical tasks — like thermal imaging, debris clearing, or route mapping — during an active emergency.
 
-**Contains:**
-1. Executive Summary (2-page version)
-2. Company Overview
-3. Problem Statement (detailed market analysis)
-4. Solution (4-step CREW protocol)
-5. Market Analysis (TAM/SAM/SOM breakdown)
-6. Competitive Landscape
-7. Business Model (4 revenue streams)
-8. Go-to-Market Strategy (3 phases)
-9. Technology & Product (roadmap, architecture)
-10. Operations Plan (org chart, hiring)
-11. Financial Projections (5-year forecast)
-12. Team & Organization
-13. Risk Analysis
-14. Exit Strategy (acquisition vs IPO)
-15. Appendices
+**The Problem:** Tens of thousands of commercial robots sit idle during disasters with no way to assist first responders.
 
-**Format:** Markdown (50+ pages when converted)
+**The Solution:** A software-only protocol that lets robots broadcast their capabilities and volunteer assistance, while keeping humans in control of every decision.
+
+> *"CREW transforms idle autonomous fleets into scalable community assets that can be mobilized instantly when seconds count."*
 
 ---
 
-## 🚀 Next Steps
+## Demo
 
-### Immediate (This Week):
-1. **Customize both documents** with your personal details:
-   - Fill in [Your Name], [Your Email], [Your Background]
-   - Add your specific experience and accomplishments
-   - Include any existing traction or pilots
+▶️ **[Watch the 34-second demo on YouTube](https://youtu.be/dEDPNMCkF6U?si=9Ms6WUkJV-i6i4Ep)**
 
-2. **Create the 3-minute demo video:**
-   - Screen record your CREW dashboard in action
-   - Show emergency broadcast → robots responding → coordinator assigning tasks
-   - Add voiceover explaining what's happening
-   - Tools: OBS Studio (free), Loom, or QuickTime
+The demo shows a live wildfire emergency broadcast over ROS 2. Three robots in the San Francisco area independently receive the broadcast, evaluate their own capabilities, and respond to the coordinator dashboard in real time:
 
-3. **Build your target list:**
-   - 20 robot manufacturers to contact
-   - 20 emergency agencies for pilots
-   - 10 investors (angels or seed VCs)
+- 🚁 **survey_drone_01** — Route mapping, aerial photography
+- 🤖 **ground_bot_01** — Debris clearing, heavy lift
+- 📡 **thermal_drone_01** — Thermal imaging
 
-### Week 2-3:
-4. **Convert pitch deck to slides:**
-   - Use Canva (free templates)
-   - Google Slides (simple, shareable)
-   - PowerPoint (most professional)
-   - Add: Screenshots from your dashboard, team photos, demo video embed
-
-5. **Start outreach:**
-   - Use the email templates provided
-   - Send 5-10 emails per day
-   - Track responses in a spreadsheet
-   - Book intro calls
-
-6. **Apply for SBIR grants:**
-   - Visit sbir.gov
-   - Search for "robotics" and "emergency response"
-   - Use business plan as foundation for proposal
-   - Deadline cycles: Check quarterly
-
-### Month 2:
-7. **Pitch to investors:**
-   - Practice your 10-minute pitch (use deck)
-   - Anticipate questions (use business plan)
-   - Follow up with full plan after meeting
-   - Close your seed round ($500K-$2M)
+The CREW Dashboard displays each robot's location on a live map, their availability status, battery level, ETAs, and the capabilities needed for the active emergency.
 
 ---
 
-## 💡 How to Use These Documents
+## Key Features
 
-### For Investor Meetings:
-- **Send ahead:** Pitch deck only (don't overwhelm)
-- **Present:** Slides from pitch deck (10-15 minutes)
-- **Leave behind:** Full business plan (after they express interest)
-- **Follow up:** Email with deck + plan + demo video link
-
-### For Customer Meetings (Robot Manufacturers):
-- **Send ahead:** 2-page executive summary (from business plan Section 1)
-- **Present:** Solution + business model slides (3-4 slides from deck)
-- **Demo:** Live dashboard showing CREW in action
-- **Close:** Consulting engagement ($50K-$100K)
-
-### For Grant Applications:
-- **Use:** Full business plan as foundation
-- **Customize:** Match grant requirements (innovation, impact, feasibility)
-- **Emphasize:** Technical innovation (Section 9), market need (Section 3)
-- **Budget:** Pull from financial projections (Section 11)
+- 🤝 **Opt-in participation** — Robots volunteer, never commandeered
+- 🔐 **Secure by design** — Cryptographic authentication, geo-fencing
+- 👥 **Human oversight** — Coordinators approve all task assignments
+- 🏢 **Manufacturer agnostic** — Works with any ROS 2-compatible robot
+- 📡 **Real-time coordination** — WebSocket-based live dashboard
+- 💾 **Software only** — 10MB install, zero hardware changes required
+- 🌐 **Open source** — MIT licensed, community-driven
 
 ---
 
-## 📋 Conversion Options
+## Quick Start
 
-### Convert Markdown to Other Formats:
+### Prerequisites
+- ROS 2 Humble or Jazzy
+- Python 3.10+
+- Node.js 18+ (for dashboard)
 
-**To PDF:**
+### Installation
+
 ```bash
-# Using pandoc (install: brew install pandoc)
-pandoc CREW_Pitch_Deck.md -o CREW_Pitch_Deck.pdf
-pandoc CREW_Business_Plan.md -o CREW_Business_Plan.pdf
+# Clone the repository
+git clone https://github.com/cbaz86/crew-protocol
+cd crew-protocol
+
+# Build ROS 2 packages
+colcon build
+source install/setup.bash
+
+# Install dashboard dependencies
+cd dashboard
+npm install
 ```
 
-**To Word:**
+### Run the Demo
+
+**Terminal 1 — ROS Bridge:**
 ```bash
-pandoc CREW_Business_Plan.md -o CREW_Business_Plan.docx
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 ```
 
-**To PowerPoint:**
+**Terminal 2 — CREW System:**
 ```bash
-pandoc CREW_Pitch_Deck.md -o CREW_Pitch_Deck.pptx
+ros2 launch crew_protocol crew_demo.launch.py
 ```
 
-**Online tools:**
-- Dillinger.io (Markdown to HTML/PDF)
-- StackEdit.io (Markdown editor with export)
-- Pandoc online converter
+**Terminal 3 — Dashboard:**
+```bash
+cd dashboard && npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see CREW in action.
 
 ---
 
-## 🎯 Key Numbers to Remember
+## How It Works
 
-**Market:**
-- TAM: $5B by 2030
-- SAM: $1.5B by 2028
-- SOM: $50M by Year 5
+### 1. Emergency Broadcast
+A coordinator broadcasts an emergency: type, location, radius, and capabilities needed.
 
-**Revenue:**
-- Year 1: $800K
-- Year 3: $12M
-- Year 5: $72M
+### 2. Robot Evaluation
+Each robot independently checks:
+- Do I have the required capabilities?
+- Is my battery above threshold?
+- Does my owner permit emergency mode?
+- Am I within the geo-fence?
 
-**The Ask:**
-- Seed: $2M @ $10M post-money (20% equity)
-- Series A: $5M-$10M @ $50M post (Month 18)
+### 3. Human Coordination
+The coordinator sees all available robots on the dashboard and assigns tasks.
 
-**Exit:**
-- Acquisition: $500M-$2B
-- IPO: $1B-$5B (Year 7-10)
-
-**Investor Returns:**
-- Seed: 70x on $700M exit, 225x on $3B IPO
-- Series A: 10.5x on $700M exit, 36x on $3B IPO
+### 4. Coordinated Response
+Robots execute assigned tasks under human supervision.
 
 ---
 
-## ✅ Checklist Before Sending
+## Use Cases
 
-Before sending to investors or customers:
-
-- [ ] Replaced all [Your Name] placeholders with actual info
-- [ ] Added your background and accomplishments
-- [ ] Included screenshots of working dashboard
-- [ ] Recorded 3-minute demo video
-- [ ] Proofread for typos
-- [ ] Converted to professional format (PDF or slides)
-- [ ] Added contact information and links
-- [ ] Practiced your verbal pitch (10 min version)
-- [ ] Prepared for common objections
-- [ ] Have financial model ready for deep dive
+- 🔥 **Wildfires** — Thermal imaging, evacuation routing, smoke detection
+- 🌊 **Floods** — Water level monitoring, rescue coordination, supply delivery
+- 🏚️ **Building collapse** — Structural assessment, survivor location, debris mapping
+- 🌪️ **Severe weather** — Damage assessment, emergency supply distribution
 
 ---
 
-## 📞 Support
+## Technology Stack
 
-If you need help:
-- **Technical questions:** Review Section 9 (Technology & Product)
-- **Financial questions:** Review Section 11 (Financial Projections)
-- **Sales questions:** Review Section 8 (Go-to-Market)
-- **Legal questions:** Consult startup attorney (recommended)
+CREW is built on proven, industry-standard technologies:
+
+- **ROS 2** — Industry-standard robotics middleware
+- **DDS** — Reliable pub/sub messaging
+- **WebSockets** — Real-time browser communication
+- **React + Leaflet** — Interactive live map dashboard
 
 ---
 
-## 🎉 You're Ready!
+## Roadmap
 
-You now have:
-✅ Professional pitch deck  
-✅ Comprehensive business plan  
-✅ Market validation (working prototype)  
-✅ Clear financial model  
-✅ Roadmap to $72M in revenue  
+**Q1 2026** ✅
+- [x] Core protocol implementation
+- [x] Multi-robot ROS 2 demo
+- [x] Web dashboard with live map
 
-**Go raise that $2M and build CREW.**
+**Q2 2026**
+- [ ] Mobile coordinator app (iOS/Android)
+- [ ] Offline/degraded network mode
+- [ ] Multi-language support
+
+**Q3 2026**
+- [ ] Machine learning task optimization
+- [ ] Swarm coordination
+- [ ] Advanced analytics
+
+---
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## License
+
+CREW is released under the [MIT License](LICENSE). Free for academic, personal, non-profit, and commercial use.
+
+---
+
+## About
+
+Built by **Chris Bazan**, founder of CREW Robotics.
 
 When seconds count in emergencies, coordination matters.  
 CREW turns idle robots into life-saving assets.
 
-🚀 Let's save lives.
-
----
-
-**Questions or feedback?**
-Email: [your email here]
+📧 Contact: *[your email here]*  
+🎥 Demo: [https://youtu.be/dEDPNMCkF6U](https://youtu.be/dEDPNMCkF6U?si=9Ms6WUkJV-i6i4Ep)  
+⭐ If you find this useful, please star the repo!
