@@ -1,0 +1,26 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+
+# Node / React
+node_modules/
+npm-debug.log
+
+# Environment / secrets
+.env
+*.env
+
+# OS junk
+.DS_Store
+*.swp
+*~
+
+# Video files (too large for GitHub)
+*.mp4
+*.mkv
