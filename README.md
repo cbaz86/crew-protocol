@@ -168,6 +168,6 @@ Built by **Chris Bazan**, founder of CREW Robotics.
 When seconds count in emergencies, coordination matters.  
 CREW turns idle robots into life-saving assets.
 
-📧 Contact: *[your email here]*  
+📧 Contact: chrisbazan86@gmail.com  
 🎥 Demo: [https://youtu.be/dEDPNMCkF6U](https://youtu.be/dEDPNMCkF6U?si=9Ms6WUkJV-i6i4Ep)  
 ⭐ If you find this useful, please star the repo!
